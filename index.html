@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pernikahan Aldi Asdira & Rizki Putri Pungkasari</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  </head>
+
+<!-- Cover / Opening Page -->
+<div id="openingPage" style="
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('img/bg/wedding.jpg') center center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+">
+  <h3>The Wedding of</h3>
+  <h2 style="font-size: 32px; margin-bottom: 10px;">Aldi & Rizki</h2>
+  <h3 style="margin-bottom: 10px;">Kepada</h3>
+  <h1 style="font-size: 42px; margin-bottom: 20px;">Bapak/Ibu</h1>
+  <p style="margin-bottom: 20px;">Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/i untuk Hadir di Acara Kami.</p>
+  <button onclick="openInvitation()" style="
+    background-color: #d4af7a;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;">
+    Buka Undangan
+  </button>
+</div>
+
+
+  <body>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Aldi & Rizki</h1>
+        <p>We're getting married on <br />June 15, 2025</p>
+        <a href="#rsvp" class="btn" style="background-color: #3c3c3c"
+          >RSVP Now</a
+        >
+
+        <div class="countdown">
+          <div class="countdown-item">
+            <div class="countdown-number" id="days">00</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="hours">00</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="minutes">00</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="seconds">00</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-ornament">
+      <img src="img/bg/ornament3.png" alt="Ornament" class="ornament-img" />
+    </div>
+
+    <!-- Couple Introduction Section -->
+    <section class="couple-intro" id="couple">
+      <div class="container">
+        <div class="section-title">
+          <h2>بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم</h2>
+        </div>
+        <div class="couple-container">
+          <!-- Groom -->
+          <div class="couple-profile fade-in">
+            <p class="couple-details">
+              Assalamu'alaikum Warohmatullahi Wabarokatuh
+            </p>
+            <p class="couple-details">
+              Dengan memohon Ridho serta Rahmat Allah SWT <br />
+              dan tanpa mengurangi rasa hormat, kami bermaksud <br />
+              mengundang Bapak/Ibu/Saudara/i untuk menghadiri <br />
+              acara pernikahan kami
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="couple-container">
+          <!-- Groom -->
+          <div class="couple-profile fade-in">
+            <div class="photo-wrapper">
+              <img
+                src="img/profile/male.jpg"
+                alt="Groom"
+                class="couple-photo"
+              />
+              <img src="img/bg/ornament5.png" alt="" class="photo-frame" />
+            </div>
+            <h3 class="couple-name">Aldi Asdira</h3>
+            <p class="couple-details">
+              Putra dari Bapak Sugiyo & Ibu Suharni<br />
+              Dukuh Gandil RT 08 Ds. Bendungan, kec. Kedawung, Kab. Sragen
+            </p>
+          </div>
+
+          <!-- Symbol with animation -->
+          <div class="couple-symbol heart-beat">&</div>
+
+          <!-- Bride -->
+          <div class="couple-profile fade-in">
+            <div class="photo-wrapper">
+              <img
+                src="img/profile/female.jpg"
+                alt="Bride"
+                class="couple-photo"
+              />
+              <img src="img/bg/ornament5.png" alt="" class="photo-frame" />
+            </div>
+            <h3 class="couple-name">Rizki Putri Pungkasari</h3>
+            <p class="couple-details">
+              Putri dari Bapak Mulyono & Ibu Alm.Djuariyah/Uswatun Chasanah
+              Noor<br />
+              Dukuh Griya Purwosuman Asri RT 07 Ds. Purwosuman, kec.Sidoharjo,
+              Kab.Sragen
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-ornament">
+      <img src="img/bg/ornament3.png" alt="Ornament" class="ornament-img" />
+    </div>
+
+    <!-- Event Details Section -->
+    <section class="event-details" id="events">
+      <div class="container">
+        <div class="section-title">
+          <h2>Event Details</h2>
+        </div>
+
+        <div class="event-cards">
+          <div class="event-card">
+            <div class="event-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Wedding Reception</h3>
+            <div class="event-date">SUNDAY, 15 June. 2023</div>
+            <div class="event-time">10:00 AM - 11:00 AM</div>
+            <div class="event-address">
+              Dukuh Gandil RT 08 Ds. Bendungan, kec. Kedawung, Kab. Sragen
+            </div>
+
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d441.5446890450583!2d111.04688506531394!3d-7.466073146299256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a1d004c05234f%3A0xd33e190512a95187!2sLokasi%20Pernikahan%20Aldi%20Asdira%20%26%20Rizki%20Putri%20Pungkasar!5e1!3m2!1sen!2sid!4v1746037295980!5m2!1sen!2sid"
+                width="100%"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="wedding-map"
+              >
+              </iframe>
+            </div>
+            <a
+              href="https://maps.google.com/?q=-7.466023117342424, 111.04681714129258"
+              target="_blank"
+              class="btn"
+              >View Full Map</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-ornament">
+      <img src="img/bg/ornament3.png" alt="Ornament" class="ornament-img" />
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="section-title">
+          <h2>Gallery</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="img/gallery/image4.jpg" alt="Couple photo" />
+          </div>
+          <div class="gallery-item">
+            <img src="img/gallery/image5.jpg" alt="Couple photo" />
+          </div>
+          <div class="gallery-item">
+            <img src="img/gallery/image6.jpg" alt="Couple photo" />
+          </div>
+          <div class="gallery-item">
+            <img src="img/gallery/image7.jpg" alt="Couple photo" />
+          </div>
+          <div class="gallery-item">
+            <img src="img/gallery/image8.jpg" alt="Couple photo" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-ornament">
+      <img src="img/bg/ornament3.png" alt="Ornament" class="ornament-img" />
+    </div>
+
+    <!-- RSVP Section -->
+    <section class="rsvp" id="rsvp">
+      <div class="container">
+        <div class="section-title">
+          <h2>RSVP</h2>
+          <p>Please let us know if you can attend our wedding</p>
+        </div>
+
+        <div class="rsvp-form">
+          <form id="wedding-rsvp">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+              <label for="guests">Number of Guests</label>
+              <select id="guests" class="form-control" required>
+                <option value="" disabled selected>Select number</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Will you attend?</label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="attending" value="yes" checked />
+                  Yes
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="attending" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message (Optional)</label>
+              <textarea id="message" class="form-control"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Submit RSVP</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-ornament">
+      <img src="img/bg/ornament3.png" alt="Ornament" class="ornament-img" />
+    </div>
+
+    <!-- Kirim Hadiah Section -->
+    <section class="gift-transfer" id="hadiah">
+      <div class="container">
+        <div class="section-title">
+          <h2>KIRIM HADIAH</h2>
+        </div>
+        <div class="couple-container">
+          <p class="couple-details">
+            Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.
+            Namun jika memberi adalah ungkapan tanda kasih Anda, kami akan
+            senang hati menerimanya dan tentu semakin melengkapi kebahagiaan
+            kami.
+          </p>
+          <br />
+        </div>
+
+        <div class="bank-transfer-card">
+          <div class="bank-details">
+            <div class="bank-info">
+              <div class="bank-logo">
+                <img
+                  src="img/logo/bsi2.png"
+                  alt="Logo Bank BSI"
+                  width="45%"
+                  height="100%"
+                />
+              </div>
+              <span class="account-number">7257505857</span>
+              <span class="account-holder">A/N: Aldi Asdira</span>
+            </div>
+
+            <button class="copy-btn" onclick="copyAccountNumber('7257505857')">
+              <i class="fas fa-copy"></i> Salin
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #3c3c3c">
+      <div class="container" style="background-color: #3c3c3c">
+        <div class="footer-logo">Aldi & Rizki</div>
+
+        <!-- <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+            </div> -->
+
+        <div class="copyright">
+          &copy; 2025
+          <a
+            href="https://github.com/Diowisn"
+            style="color: #d4af7a"
+            target="_blank"
+            >Diowisn</a
+          >. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+    <!-- Floating Music Player -->
+<div class="music-player">
+    <style>
+      .music-player {
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        background: rgba(60, 60, 60, 0.9);
+        border-radius: 30px;
+        padding: 8px 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+      }
+  
+      .music-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #d4af7a;
+        color: white;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+  
+      .music-btn:hover {
+        background: #c19a65;
+        transform: scale(1.1);
+      }
+  
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+  
+      .music-player:hover {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  
+    <button id="musicToggle" class="music-btn">
+      <i class="fas fa-play"></i>
+    </button>
+  </div>
+  
+  <script>
+// Jadikan audio dan isPlaying global
+let audio;
+let isPlaying = false;
+
+document.addEventListener("DOMContentLoaded", function () {
+  audio = new Audio("music/sinarengan.mp3");
+  audio.loop = true;
+
+  const musicToggle = document.getElementById("musicToggle");
+
+  musicToggle.addEventListener("click", function () {
+    if (isPlaying) {
+      audio.pause();
+      musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+    } else {
+      audio.play();
+      musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+    }
+    isPlaying = !isPlaying;
+  });
+
+  audio.addEventListener("pause", () => {
+    musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+    isPlaying = false;
+  });
+
+  audio.addEventListener("play", () => {
+    musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+    isPlaying = true;
+  });
+});
+
+  </script>
+  
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <ul class="nav-links">
+        <li>
+          <a href="#home" class="active">
+            <i class="fas fa-home"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#couple">
+            <i class="fas fa-heart"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#events">
+            <i class="fas fa-calendar-alt"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#gallery">
+            <i class="fas fa-images"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#rsvp">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        function openInvitation() {
+          // Sembunyikan cover pembuka
+          document.getElementById('openingPage').style.display = 'none';
+      
+          // Scroll ke home
+          document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+      
+          // Mainkan musik
+          if (typeof audio !== 'undefined') {
+            audio.play().then(() => {
+              isPlaying = true;
+              document.getElementById("musicToggle").innerHTML = '<i class="fas fa-pause"></i>';
+            }).catch((e) => {
+              console.log("Gagal autoplay: ", e);
+            });
+          }
+        }
+      </script>
+
+
+  </body>
+</html>

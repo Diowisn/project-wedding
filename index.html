@@ -13,47 +13,58 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
 
-<!-- Cover / Opening Page -->
-<div id="openingPage" style="
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('img/bg/wedding.jpg') center center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-">
-  <h3>The Wedding of</h3>
-  <h2 style="font-size: 32px; margin-bottom: 10px;">Aldi & Rizki</h2>
-  <h3 style="margin-bottom: 10px;">Kepada</h3>
-  <h1 style="font-size: 42px; margin-bottom: 20px;">Bapak/Ibu</h1>
-  <p style="margin-bottom: 20px;">Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/i untuk Hadir di Acara Kami.</p>
-  <button onclick="openInvitation()" style="
-    background-color: #d4af7a;
-    color: white;
-    padding: 12px 25px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;">
-    Buka Undangan
-  </button>
-</div>
-
-
   <body>
+    <!-- Cover / Opening Page -->
+    <div
+      id="openingPage"
+      style="
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: url('img/bg/wedding.jpg') center center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        text-align: center;
+      "
+    >
+      <h3>The Wedding of</h3>
+      <h2 style="font-size: 32px; margin-bottom: 10px">Aldi & Rizki</h2>
+      <h3 style="margin-bottom: 10px">Kepada</h3>
+      <h1 style="font-size: 42px; margin-bottom: 20px">Bapak/Ibu</h1>
+      <p style="margin-bottom: 20px">
+        Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/i untuk
+        Hadir di Acara Kami.
+      </p>
+      <button
+        onclick="openInvitation()"
+        style="
+          background-color: #d4af7a;
+          color: white;
+          padding: 12px 25px;
+          font-size: 18px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        "
+      >
+        Buka Undangan
+      </button>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="hero-content">
@@ -95,7 +106,6 @@
           <h2>بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم</h2>
         </div>
         <div class="couple-container">
-          <!-- Groom -->
           <div class="couple-profile fade-in">
             <p class="couple-details">
               Assalamu'alaikum Warohmatullahi Wabarokatuh
@@ -247,18 +257,30 @@
           <form id="wedding-rsvp">
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" class="form-control" required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                required
+              />
             </div>
 
             <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" class="form-control" required />
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-control"
+                required
+              />
             </div>
 
             <div class="form-group">
               <label for="guests">Number of Guests</label>
-              <select id="guests" class="form-control" required>
-                <option value="" disabled selected>Select number</option>
+              <select id="guests" name="guests" class="form-control" required>
+                <option value="" disabled selected hidden>Select number</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -283,7 +305,11 @@
 
             <div class="form-group">
               <label for="message">Message (Optional)</label>
-              <textarea id="message" class="form-control"></textarea>
+              <textarea
+                id="message"
+                name="message"
+                class="form-control"
+              ></textarea>
             </div>
 
             <button type="submit" class="btn">Submit RSVP</button>
@@ -335,6 +361,114 @@
       </div>
     </section>
 
+    <div class="section-ornament">
+      <img src="img/bg/ornament3.png" alt="Ornament" class="ornament-img" />
+    </div>
+
+    <!-- Kirim Ucapan Section -->
+    <section class="wishes-section" id="ucapan">
+      <div class="container">
+        <div class="section-title">
+          <h2>KIRIM UCAPAN</h2>
+        </div>
+
+        <div class="couple-container">
+          <p class="couple-details">
+            Tinggalkan kami doa terbaik anda untuk moment bahagia kami
+          </p>
+        </div>
+        
+        <div class="wishes-form">
+          <div class="wishes-stats">
+            <span id="comments-count">0 Comments</span>
+          </div>
+          <form id="send-wishes">
+            <div class="form-group">
+              <input
+                type="text"
+                id="sender-name"
+                name="sender-name"
+                class="form-control"
+                placeholder="Nama"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <textarea
+                id="wishes-message"
+                name="wishes-message"
+                class="form-control"
+                placeholder="Ucapan"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn">Kirim</button>
+          </form>
+
+          <div
+            class="wishes-comments card-scroll"
+            style="
+              max-height: 300px;
+              overflow-y: auto;
+              padding: 15px;
+              border: 1px solid #d4af7a;
+              border-radius: 10px;
+              background-color: #3c3c3c;
+            "
+          >
+            <!-- Komentar muncul disini -->
+          </div>
+          <button
+            id="load-more-wishes"
+            class="btn"
+            style="margin-top: 20px; display: none"
+          >
+            Lihat Lebih Banyak
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Music Player -->
+    <div class="music-player">
+      <button id="musicToggle" class="music-btn">
+        <i class="fas fa-play"></i>
+      </button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <ul class="nav-links">
+        <li>
+          <a href="#home" class="active">
+            <i class="fas fa-home"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#couple">
+            <i class="fas fa-heart"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#events">
+            <i class="fas fa-calendar-alt"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#rsvp">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#hadiah">
+            <i class="fas fa-gift"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
     <!-- Footer -->
     <footer style="background-color: #3c3c3c">
       <div class="container" style="background-color: #3c3c3c">
@@ -358,155 +492,153 @@
         </div>
       </div>
     </footer>
-    <!-- Floating Music Player -->
-<div class="music-player">
-    <style>
-      .music-player {
-        position: fixed;
-        bottom: 70px;
-        right: 20px;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        background: rgba(60, 60, 60, 0.9);
-        border-radius: 30px;
-        padding: 8px 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-        backdrop-filter: blur(5px);
-      }
-  
-      .music-btn {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #d4af7a;
-        color: white;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 16px;
-        transition: all 0.3s ease;
-      }
-  
-      .music-btn:hover {
-        background: #c19a65;
-        transform: scale(1.1);
-      }
-  
-      @keyframes float {
-        0% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-5px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-      }
-  
-      .music-player:hover {
-        animation: float 3s ease-in-out infinite;
-      }
-    </style>
-  
-    <button id="musicToggle" class="music-btn">
-      <i class="fas fa-play"></i>
-    </button>
-  </div>
-  
-  <script>
-// Jadikan audio dan isPlaying global
-let audio;
-let isPlaying = false;
-
-document.addEventListener("DOMContentLoaded", function () {
-  audio = new Audio("music/sinarengan.mp3");
-  audio.loop = true;
-
-  const musicToggle = document.getElementById("musicToggle");
-
-  musicToggle.addEventListener("click", function () {
-    if (isPlaying) {
-      audio.pause();
-      musicToggle.innerHTML = '<i class="fas fa-play"></i>';
-    } else {
-      audio.play();
-      musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
-    }
-    isPlaying = !isPlaying;
-  });
-
-  audio.addEventListener("pause", () => {
-    musicToggle.innerHTML = '<i class="fas fa-play"></i>';
-    isPlaying = false;
-  });
-
-  audio.addEventListener("play", () => {
-    musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
-    isPlaying = true;
-  });
-});
-
-  </script>
-  
-
-    <!-- Bottom Navigation -->
-    <nav class="bottom-nav">
-      <ul class="nav-links">
-        <li>
-          <a href="#home" class="active">
-            <i class="fas fa-home"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#couple">
-            <i class="fas fa-heart"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#events">
-            <i class="fas fa-calendar-alt"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#gallery">
-            <i class="fas fa-images"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#rsvp">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <script src="js/script.js"></script>
-
-    <script>
-        function openInvitation() {
-          // Sembunyikan cover pembuka
-          document.getElementById('openingPage').style.display = 'none';
-      
-          // Scroll ke home
-          document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
-      
-          // Mainkan musik
-          if (typeof audio !== 'undefined') {
-            audio.play().then(() => {
-              isPlaying = true;
-              document.getElementById("musicToggle").innerHTML = '<i class="fas fa-pause"></i>';
-            }).catch((e) => {
-              console.log("Gagal autoplay: ", e);
-            });
-          }
-        }
-      </script>
-
-
   </body>
+
+  <script src="js/script.js" defer></script>
+  <script>
+    const form = document.getElementById("wedding-rsvp");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = {
+        name: form.querySelector("#name").value,
+        phone: form.querySelector("#phone").value,
+        guests: form.querySelector("#guests").value,
+        attending: form.querySelector('input[name="attending"]:checked').value,
+        message: form.querySelector("#message").value,
+      };
+
+      console.log("Form values:", formData);
+
+      if (!formData.name || !formData.phone || !formData.guests) {
+        alert("Please fill in all required fields!");
+
+        if (!formData.name) console.error("Name is empty");
+        if (!formData.phone) console.error("Phone is empty");
+        if (!formData.guests) console.error("Guests not selected");
+
+        return;
+      }
+
+      fetch("rsvp_submit.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === "success") {
+            alert("Thank you! Your RSVP has been submitted.");
+            form.reset();
+          } else {
+            throw new Error(data.message || "Unknown error occurred");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Error submitting RSVP: " + error.message);
+        });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const wishesForm = document.getElementById("send-wishes");
+      const commentsContainer = document.querySelector(".wishes-comments");
+      const commentsCount = document.getElementById("comments-count");
+      const loadMoreBtn = document.getElementById("load-more-wishes");
+
+      let offset = 0;
+      const limit = 3;
+
+      function loadWishes(loadMore = false) {
+        fetch(`wishes_fetch.php?limit=${limit}&offset=${offset}`)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "success") {
+              if (!loadMore) {
+                commentsContainer.innerHTML = "";
+              }
+
+              data.comments.forEach((comment) => {
+                const commentHTML = `
+              <div class="comment">
+                <div class="comment-header">
+                  <span class="comment-name">${comment.sender_name}</span>
+                </div>
+                <div class="comment-text">${comment.message}</div>
+                <div class="comment-footer">
+                  <span class="comment-time">${new Date(
+                    comment.created_at
+                  ).toLocaleString()}</span>
+                </div>
+              </div>
+            `;
+                commentsContainer.innerHTML += commentHTML;
+              });
+
+              if (data.comments.length < limit) {
+                loadMoreBtn.style.display = "none";
+              } else {
+                loadMoreBtn.style.display = "inline-block";
+              }
+
+              offset += limit;
+              updateCommentsCount();
+            }
+          });
+      }
+
+      function updateCommentsCount() {
+        fetch("wishes_fetch.php?limit=99999&offset=0")
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "success") {
+              commentsCount.textContent = `${data.comments.length} Comments`;
+            }
+          });
+      }
+
+      wishesForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const senderName = document.getElementById("sender-name").value;
+        const message = document.getElementById("wishes-message").value;
+
+        if (!senderName || !message) {
+          alert("Nama dan ucapan wajib diisi.");
+          return;
+        }
+
+        fetch("wishes_submit.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            senderName,
+            message,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "success") {
+              wishesForm.reset();
+              offset = 0;
+              loadWishes();
+            } else {
+              alert("Gagal mengirim ucapan: " + data.message);
+            }
+          });
+      });
+
+      loadMoreBtn.addEventListener("click", () => {
+        loadWishes(true);
+      });
+
+      loadWishes();
+    });
+  </script>
 </html>

@@ -179,3 +179,52 @@ document.addEventListener("DOMContentLoaded", function () {
     isPlaying = true;
   });
 });
+
+//  <script>
+//     const form = document.getElementById("wedding-rsvp");
+
+//     form.addEventListener("submit", (e) => {
+//       e.preventDefault();
+
+//       const formData = {
+//         name: form.querySelector("#name").value,
+//         phone: form.querySelector("#phone").value,
+//         guests: form.querySelector("#guests").value,
+//         attending: form.querySelector('input[name="attending"]:checked').value,
+//         message: form.querySelector("#message").value,
+//       };
+
+//       console.log("Form values:", formData);
+
+//       if (!formData.name || !formData.phone || !formData.guests) {
+//         alert("Please fill in all required fields!");
+
+//         if (!formData.name) console.error("Name is empty");
+//         if (!formData.phone) console.error("Phone is empty");
+//         if (!formData.guests) console.error("Guests not selected");
+
+//         return;
+//       }
+
+//       fetch("rsvp_submit.php", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(formData),
+//       })
+//         .then((response) => response.json())
+//         .then((data) => {
+//           if (data.status === "success") {
+//             alert("Thank you! Your RSVP has been submitted.");
+//             form.reset();
+//           } else {
+//             throw new Error(data.message || "Unknown error occurred");
+//           }
+//         })
+//         .catch((error) => {
+//           console.error("Error:", error);
+//           alert("Error submitting RSVP: " + error.message);
+//         });
+//     });
+//   </script>

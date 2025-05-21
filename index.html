@@ -266,7 +266,7 @@
               />
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="phone">Phone Number</label>
               <input
                 type="tel"
@@ -275,7 +275,7 @@
                 class="form-control"
                 required
               />
-            </div>
+            </div> -->
 
             <div class="form-group">
               <label for="guests">Number of Guests</label>
@@ -303,14 +303,14 @@
               </div>
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="message">Message (Optional)</label>
               <textarea
                 id="message"
                 name="message"
                 class="form-control"
               ></textarea>
-            </div>
+            </div> -->
 
             <button type="submit" class="btn">Submit RSVP</button>
           </form>
@@ -509,38 +509,28 @@
         message: form.querySelector("#message").value,
       };
 
-      console.log("Form values:", formData);
-
       if (!formData.name || !formData.phone || !formData.guests) {
         alert("Please fill in all required fields!");
-
-        if (!formData.name) console.error("Name is empty");
-        if (!formData.phone) console.error("Phone is empty");
-        if (!formData.guests) console.error("Guests not selected");
-
         return;
       }
 
-      fetch("rsvp_submit.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.status === "success") {
-            alert("Thank you! Your RSVP has been submitted.");
-            form.reset();
-          } else {
-            throw new Error(data.message || "Unknown error occurred");
-          }
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          alert("Error submitting RSVP: " + error.message);
-        });
+      // Format pesan untuk WhatsApp
+    const whatsappMessage = 
+      `Halo! Aku mau konfirmasi RSVP ya 🎉\n\n` +
+      `👤 Nama: ${formData.name}\n` +
+      `📞 Nomor HP: ${formData.phone}\n` +
+      `👥 Jumlah tamu: ${formData.guests} orang\n` +
+      `🎈 Akan hadir: ${formData.attending === "yes" ? "Iya dong!" : "Maaf, nggak bisa hadir"}\n` +
+      (formData.message ? `💬 Pesan tambahan: ${formData.message}` : "");
+
+      const phoneNumber = "6281234567890"; // Ganti dengan nomor tujuan (tanpa +, gunakan kode negara, misal 62 untuk Indonesia)
+      const whatsappURL = `https://wa.me/${+6282325847439}?text=${encodeURIComponent(whatsappMessage)}`;
+
+      // Buka WhatsApp
+      window.open(whatsappURL, "_blank");
+
+      // Reset form jika perlu
+      form.reset();
     });
   </script>
 

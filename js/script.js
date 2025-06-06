@@ -29,9 +29,9 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // Auto slide change
-setInterval(() => {
-  showSlide(currentSlide + 1);
-}, 5000);
+// setInterval(() => {
+//   showSlide(currentSlide + 1);
+// }, 5000);
 
 // Animate on Scroll
 function checkVisibility() {

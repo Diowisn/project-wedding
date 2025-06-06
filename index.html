@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="img/logo/Logo-Dio-Hitam.png" class="icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pernikahan Aldi Asdira & Rizki Putri Pungkasari</title>
     <link
@@ -17,79 +18,124 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <script>
+      // Fungsi untuk mengambil parameter dari URL
+      function getUrlParameter(name) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(window.location.href);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+    </script>
   </head>
 
   <body>
     <!-- Cover / Opening Page -->
-    <div
-      id="openingPage"
-      style="
-        position: fixed;
-        z-index: 9999;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: url('img/bg/wedding.jpg') center center/cover no-repeat;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-family: 'Playfair Display', serif;
-        text-align: center;
-      "
-    >
-      <h3>The Wedding of</h3>
-      <h2 style="font-size: 32px; margin-bottom: 10px">Aldi & Rizki</h2>
-      <h3 style="margin-bottom: 10px">Kepada</h3>
-      <h1 style="font-size: 42px; margin-bottom: 20px">Bapak/Ibu</h1>
-      <p style="margin-bottom: 20px">
-        Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/i untuk
-        Hadir di Acara Kami.
-      </p>
-      <button
-        onclick="openInvitation()"
-        style="
-          background-color: #d4af7a;
-          color: white;
-          padding: 12px 25px;
-          font-size: 18px;
-          border: none;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-        "
-      >
-        Buka Undangan
-      </button>
-    </div>
+<div
+  id="openingPage"
+  style="
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, -0.5), rgba(0, 0, 0, 0.5)), url('img/bg/wedding.jpg') center center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    /* box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); */
+  "
+>
+
+  <h3 style="margin-bottom: -12px">Pernikahan</h3>
+  <h2 style="font-size: 32px; margin-bottom: 5px">Aldi & Rizki</h2>
+  <h3 style="margin-bottom: -12px">Kepada</h3>
+  <h1 style="font-size: 42px; margin-bottom: 20px" id="recipientName">Bapak/Ibu</h1>
+  <p style="margin-bottom: 20px">
+    Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/i untuk
+    Hadir di Acara Kami.
+  </p>
+  <button
+    onclick="openInvitation()"
+    style="
+      background-color: #d4af7a;
+      color: white;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    "
+  >
+    Buka Undangan
+  </button>
+</div>
+
+<script>
+  // Ambil parameter 'to' dari URL
+  var recipientName = getUrlParameter('to');
+  
+  // Daftar nama yang diundang (validasi)
+  const guestList = [
+    'mega', 'anang', 'annissa', 'ayuk', 'charles', 
+    'fadil', 'citra', 'david', 'deni', 'mustika',
+    'tina', 'ryan', 'risa', 'afifah umi', 'wuri',
+    'katrin', 'deta', 'mutia', 'nuri', 'sekar',
+    'via', 'rita rahmawati'
+  ];
+
+  // Jika ada parameter 'to' di URL dan termasuk dalam daftar tamu
+  if (recipientName) {
+    const normalizedInput = recipientName.toLowerCase().trim();
+    const isValidGuest = guestList.some(guest => 
+      guest.toLowerCase() === normalizedInput
+    );
+    
+    if (isValidGuest) {
+      // Format nama (huruf pertama kapital)
+      const formattedName = recipientName.split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+      
+      document.getElementById('recipientName').textContent = formattedName;
+    }
+  }
+</script>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="hero-content">
         <h1>Aldi & Rizki</h1>
-        <p>We're getting married on <br />June 15, 2025</p>
+        <p>Kami akan mengadakan Resepsi Pernikahan pada <br />15 Juni 2025</p>
         <a href="#rsvp" class="btn" style="background-color: #3c3c3c"
-          >RSVP Now</a
+          >Konfirmasi Kehadiran</a
         >
 
         <div class="countdown">
           <div class="countdown-item">
             <div class="countdown-number" id="days">00</div>
-            <div class="countdown-label">Days</div>
+            <div class="countdown-label">Hari</div>
           </div>
           <div class="countdown-item">
             <div class="countdown-number" id="hours">00</div>
-            <div class="countdown-label">Hours</div>
+            <div class="countdown-label">Jam</div>
           </div>
           <div class="countdown-item">
             <div class="countdown-number" id="minutes">00</div>
-            <div class="countdown-label">Minutes</div>
+            <div class="countdown-label">Menit</div>
           </div>
           <div class="countdown-item">
             <div class="countdown-number" id="seconds">00</div>
-            <div class="countdown-label">Seconds</div>
+            <div class="countdown-label">Detik</div>
           </div>
         </div>
       </div>
@@ -134,7 +180,7 @@
             <h3 class="couple-name">Aldi Asdira</h3>
             <p class="couple-details">
               Putra dari Bapak Sugiyo & Ibu Suharni<br />
-              Dukuh Gandil RT 08 Ds. Bendungan, kec. Kedawung, Kab. Sragen
+              Dukuh Gandil RT 08 Ds. Bendungan, Kec. Kedawung, Kab. Sragen
             </p>
           </div>
 
@@ -155,7 +201,7 @@
             <p class="couple-details">
               Putri dari Bapak Mulyono & Ibu Alm.Djuariyah/Uswatun Chasanah
               Noor<br />
-              Dukuh Griya Purwosuman Asri RT 07 Ds. Purwosuman, kec.Sidoharjo,
+              Dukuh Griya Purwosuman Asri RT 07 Ds. Purwosuman, Kec.Sidoharjo,
               Kab.Sragen
             </p>
           </div>
@@ -171,7 +217,7 @@
     <section class="event-details" id="events">
       <div class="container">
         <div class="section-title">
-          <h2>Event Details</h2>
+          <h2>Detail Acara</h2>
         </div>
 
         <div class="event-cards">
@@ -179,9 +225,9 @@
             <div class="event-icon">
               <i class="fas fa-heart"></i>
             </div>
-            <h3>Wedding Reception</h3>
-            <div class="event-date">SUNDAY, 15 June. 2023</div>
-            <div class="event-time">10:00 AM - 11:00 AM</div>
+            <h3>Resepsi Pernikahan</h3>
+            <div class="event-date">MINGGU, 15 Juni 2025</div>
+            <div class="event-time">10:00 - 12:00 WIB</div>
             <div class="event-address">
               Dukuh Gandil RT 08 Ds. Bendungan, kec. Kedawung, Kab. Sragen
             </div>
@@ -203,7 +249,7 @@
               href="https://maps.google.com/?q=-7.466023117342424, 111.04681714129258"
               target="_blank"
               class="btn"
-              >View Full Map</a
+              >Lihat Peta Lengkap</a
             >
           </div>
         </div>
@@ -218,7 +264,7 @@
     <section class="gallery" id="gallery">
       <div class="container">
         <div class="section-title">
-          <h2>Gallery</h2>
+          <h2>Galeri</h2>
         </div>
 
         <div class="gallery-grid">
@@ -249,14 +295,17 @@
     <section class="rsvp" id="rsvp">
       <div class="container">
         <div class="section-title">
-          <h2>RSVP</h2>
-          <p>Please let us know if you can attend our wedding</p>
+          <h2>Konfirmasi Kehadiran</h2>
+        </div>
+        <div class="couple-container">
+          <p class="couple-details">Mohon beritahu kami jika anda bisa menghadiri pernikahan kami</p>
+          <br />
         </div>
 
         <div class="rsvp-form">
           <form id="wedding-rsvp">
             <div class="form-group">
-              <label for="name">Your Name</label>
+              <label for="name">Nama</label>
               <input
                 type="text"
                 id="name"
@@ -265,6 +314,17 @@
                 required
               />
             </div>
+
+            <div class="form-group">
+            <label for="address">Alamat</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              class="form-control"
+              required
+            />
+          </div>
 
             <!-- <div class="form-group">
               <label for="phone">Phone Number</label>
@@ -278,9 +338,9 @@
             </div> -->
 
             <div class="form-group">
-              <label for="guests">Number of Guests</label>
+              <label for="guests">Jumlah Kehadiran</label>
               <select id="guests" name="guests" class="form-control" required>
-                <option value="" disabled selected hidden>Select number</option>
+                <option value="" disabled selected hidden>Pilih jumlah</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -290,15 +350,15 @@
             </div>
 
             <div class="form-group">
-              <label>Will you attend?</label>
+              <label>Konfirmasi kehadiran</label>
               <div class="radio-group">
                 <label class="radio-option">
                   <input type="radio" name="attending" value="yes" checked />
-                  Yes
+                  Ya, saya akan hadir
                 </label>
                 <label class="radio-option">
                   <input type="radio" name="attending" value="no" />
-                  No
+                  Maaf, saya tidak bisa hadir
                 </label>
               </div>
             </div>
@@ -312,7 +372,7 @@
               ></textarea>
             </div> -->
 
-            <button type="submit" class="btn">Submit RSVP</button>
+            <button type="submit" class="btn">Kirim Konfirmasi</button>
           </form>
         </div>
       </div>
@@ -380,7 +440,7 @@
         
         <div class="wishes-form">
           <div class="wishes-stats">
-            <span id="comments-count">0 Comments</span>
+            <span id="comments-count">0 Ucapan</span>
           </div>
           <form id="send-wishes">
             <div class="form-group">
@@ -416,6 +476,7 @@
               border: 1px solid #d4af7a;
               border-radius: 10px;
               background-color: #3c3c3c;
+              font-size: 11px;
             "
           >
             <!-- Komentar muncul disini -->
@@ -503,35 +564,31 @@
 
       const formData = {
         name: form.querySelector("#name").value,
-        phone: form.querySelector("#phone").value,
+        address: form.querySelector("#address").value,
         guests: form.querySelector("#guests").value,
         attending: form.querySelector('input[name="attending"]:checked').value,
-        message: form.querySelector("#message").value,
       };
 
-      if (!formData.name || !formData.phone || !formData.guests) {
-        alert("Please fill in all required fields!");
+      if (!formData.name || !formData.guests) {
+        alert("Silakan isi semua kolom yang wajib ya!");
         return;
       }
 
-      // Format pesan untuk WhatsApp
-    const whatsappMessage = 
-      `Halo! Aku mau konfirmasi RSVP ya 🎉\n\n` +
-      `👤 Nama: ${formData.name}\n` +
-      `📞 Nomor HP: ${formData.phone}\n` +
-      `👥 Jumlah tamu: ${formData.guests} orang\n` +
-      `🎈 Akan hadir: ${formData.attending === "yes" ? "Iya dong!" : "Maaf, nggak bisa hadir"}\n` +
-      (formData.message ? `💬 Pesan tambahan: ${formData.message}` : "");
+      const whatsappMessage = 
+        `Wahh, akhirnya hari yang ditunggu-tunggu datang juga! \n\n` +
+        `Nama: ${formData.name}\n` +
+        `Alamat: ${formData.address}\n` +
+        `Datang berapa orang: ${formData.guests} orang\n` +
+        `Konfirmasi : ${formData.attending === "yes" ? "Ya, saya akan hadir di Resepsi Pernikahan kalian!" : "Maaf, nggak bisa hadir"}`;
 
-      const phoneNumber = "6281234567890"; // Ganti dengan nomor tujuan (tanpa +, gunakan kode negara, misal 62 untuk Indonesia)
-      const whatsappURL = `https://wa.me/${+6282325847439}?text=${encodeURIComponent(whatsappMessage)}`;
+      const phoneNumber = "6285158758220";
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-      // Buka WhatsApp
       window.open(whatsappURL, "_blank");
 
-      // Reset form jika perlu
       form.reset();
     });
+
   </script>
 
   <script>
@@ -587,7 +644,7 @@
           .then((res) => res.json())
           .then((data) => {
             if (data.status === "success") {
-              commentsCount.textContent = `${data.comments.length} Comments`;
+              commentsCount.textContent = `${data.comments.length} Ucapan`;
             }
           });
       }

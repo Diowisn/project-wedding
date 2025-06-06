@@ -543,7 +543,7 @@ footer {
 }
 
 .couple-details {
-  font-size: 14px;
+  font-size: 11px;
   color: var(--text-color);
   margin-bottom: 20px;
 }
@@ -564,8 +564,8 @@ footer {
 
 .photo-frame {
   position: absolute;
-  top: 8.5rem;
-  left: 11rem;
+  top: 9rem;
+  left: 7.5rem;
   width: auto;
   height: 60%;
   object-fit: contain;
